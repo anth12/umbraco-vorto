@@ -136,6 +136,10 @@
                 return itm.isoCode == language.isoCode;
             });
         };
+        
+        $scope.copyCurrentValueToLanguage = function(language) {
+            $scope.model.value.values[language.isoCode] = $scope.model.value.values[$scope.currentLanguage.isoCode];
+        };
 
         var unsubReSync = $scope.$on("reSync", function (evt) {
             reSync();

@@ -33,7 +33,19 @@
                                 </li>
                             </ul> 
                         </li>
-        
+
+                    
+                <li class="vorto-tabs__item vorto-tabs__item--menu">
+                    <i class="icon icon-documents"></i>
+                    <ul class="vorto-menu">
+                        <li class="vorto-menu__item vorto-menu__item--icon"
+                            ng-click="copyCurrentValueToLanguage(language);">
+                            <span ng-hide="model.config.displayNativeNames" title="Copy current value to {{language.name}}">{{language.name}}</span>
+                            <span ng-show="model.config.displayNativeNames" title="Copy current value to {{language.nativeName}}">{{language.nativeName}}</span>
+                        </li>
+                    </ul> 
+                </li>
+
         </ul>
 
         <div class="vorto-property {{model.config.rtlBehaviour == 'css' && language.isRightToLeft ? 'rtl' : ''}}" ng-repeat="language in languages" ng-show="realActiveLanguage.isoCode == language.isoCode" dir="{{model.config.rtlBehaviour == 'html' && language.isRightToLeft ? 'rtl' : ''}}">
