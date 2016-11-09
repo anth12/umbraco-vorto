@@ -39,6 +39,7 @@
                     <i class="icon icon-documents"></i>
                     <ul class="vorto-menu">
                         <li class="vorto-menu__item vorto-menu__item--icon"
+                            ng-repeat="language in languages | filter: { isoCode: '!' +activeLanguage.isoCode }"
                             ng-click="copyCurrentValueToLanguage(language);">
                             <span ng-hide="model.config.displayNativeNames" title="Copy current value to {{language.name}}">{{language.name}}</span>
                             <span ng-show="model.config.displayNativeNames" title="Copy current value to {{language.nativeName}}">{{language.nativeName}}</span>
